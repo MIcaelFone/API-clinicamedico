@@ -1,4 +1,4 @@
-package planner_travel.api.medicos;
+package planner_travel.api.Enum;
 
 public enum Especialidade {
     ORTOPEDIA,
