@@ -1,13 +1,14 @@
-package planner_travel.api.medicos;
+package planner_travel.api.models.medicos;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import planner_travel.api.DTO.DadosAtualizarMedico;
-import planner_travel.api.DTO.DadosCadastrarMedico;
-import planner_travel.api.enderenco.Enderenco;
+import planner_travel.api.DTO.medico.DadosAtualizarMedico;
+import planner_travel.api.DTO.medico.DadosCadastrarMedico;
+import planner_travel.api.Enum.Especialidade;
+import planner_travel.api.models.enderenco.Enderenco;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
@@ -15,7 +16,7 @@ import planner_travel.api.enderenco.Enderenco;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of="id")
-public class Medico {
+public class MedicoModel {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -29,7 +30,7 @@ public class Medico {
     @Embedded
     private Enderenco endereco;
 
-    public Medico(DadosCadastrarMedico dados) {
+    public MedicoModel(DadosCadastrarMedico dados) {
         this.nome= dados.nome();
         this.crm=dados.crm();
         this.cpf=dados.cpf();
@@ -41,8 +42,8 @@ public class Medico {
         if(dados.nome()!=null){
             this.nome=dados.nome();
         }
-        else if(dados.crm()!=null){
-            this.cpf=dados.crm();
+        else if(dados.telefone()!=null){
+            this.cpf=dados.telefone();
         }
         else if(dados.endereco()!=null){
             this.endereco= new Enderenco(dados.endereco());
