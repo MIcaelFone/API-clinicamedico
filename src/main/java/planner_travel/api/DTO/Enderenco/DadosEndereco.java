@@ -1,4 +1,4 @@
-package planner_travel.api.DTO;
+package planner_travel.api.DTO.Enderenco;
 
 import jakarta.validation.constraints.NotBlank;
 
@@ -7,7 +7,10 @@ public record DadosEndereco(
         String logradouro,
         @NotBlank
         String cidade,
-        @NotBlank
-        String uf) {
+
+        String uf,
+
+        String pais
+) {
 
 }
