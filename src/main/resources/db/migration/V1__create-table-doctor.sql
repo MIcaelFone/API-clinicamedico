@@ -4,8 +4,9 @@
      cpf VARCHAR(13) NOT NULL,
      crm VARCHAR(12) NOT NULL,
      especialidade VARCHAR(100) NOT NULL,
-     logradouro VARCHAR(20) NOT NULL,
+     logradouro VARCHAR(500) NOT NULL,
      cidade VARCHAR(50) NOT NULL,
      uf VARCHAR(3) NOT NULL,
+     pais VARCHAR(45) NOT NULL,
      PRIMARY KEY (id)
  );

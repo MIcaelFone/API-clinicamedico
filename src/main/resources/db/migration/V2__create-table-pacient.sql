@@ -7,5 +7,6 @@
      logradouro VARCHAR(20) NOT NULL,
      cidade VARCHAR(50) NOT NULL,
      uf VARCHAR(3) NOT NULL,
+     pais VARCHAR(45) NOT NULL,
      PRIMARY KEY (id)
  );
