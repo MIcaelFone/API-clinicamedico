@@ -1,15 +1,14 @@
-package planner_travel.api.controller;
+package planner_travel.api.controller.Paciente;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import jdk.jfr.Description;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import planner_travel.api.DTO.paciente.DadosAtualizarPaciente;
 import planner_travel.api.DTO.paciente.DadosCadastrarPaciente;
-import planner_travel.api.service.PacientesService;
+import planner_travel.api.service.Paciente.PacientesService;
 
 import java.util.List;
 
