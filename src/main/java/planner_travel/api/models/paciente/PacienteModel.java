@@ -6,11 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.UniqueElements;
+import planner_travel.api.DTO.Consulta.DadosCadastrarConsulta;
 import planner_travel.api.DTO.paciente.DadosAtualizarPaciente;
 import planner_travel.api.DTO.paciente.DadosCadastrarPaciente;
-import planner_travel.api.models.enderenco.Enderenco;
+import planner_travel.api.models.enderenco.EnderencoModel;
 
-@Entity(name = "paciente")
+@Entity
 @Table(name = "paciente")
 @Getter
 @Setter
@@ -19,8 +20,7 @@ import planner_travel.api.models.enderenco.Enderenco;
 public class PacienteModel {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long id;
-    @Column(name = "nome")
-    @UniqueElements
+    @Column(name = "nome",unique = true)
    private String nome;
     @Column(name = "email")
    private String email;
@@ -29,22 +29,25 @@ public class PacienteModel {
     @Column(name = "CPF")
    private String CPF;
     @Embedded
-   private Enderenco enderenco;
+   private EnderencoModel enderenco;
 
     public PacienteModel(DadosCadastrarPaciente dados) {
-        nome=dados.nome();
-        email=dados.email();
-        telefone=dados.telefone();
-        CPF=dados.CPF();
-        enderenco=dados.endereco();
+        this.nome=dados.nome();
+        this.email=dados.email();
+        this.telefone=dados.telefone();
+        this.CPF=dados.CPF();
+        this.enderenco=dados.endereco();
     }
+
+
+
 
     public void atualizar(DadosAtualizarPaciente dados) {
         nome=dados.nome();
         email=dados.email();
         telefone=dados.telefone();
         CPF=dados.CPF();
-        enderenco=new Enderenco(dados.endereco());
+        enderenco=new EnderencoModel(dados.endereco());
     }
 }
 
