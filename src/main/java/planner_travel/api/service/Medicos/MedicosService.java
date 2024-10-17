@@ -1,4 +1,4 @@
-package planner_travel.api.service;
+package planner_travel.api.service.Medicos;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import planner_travel.api.DTO.medico.DadosAtualizarMedico;
 import planner_travel.api.DTO.medico.DadosCadastrarMedico;
 import planner_travel.api.models.medicos.MedicoModel;
-import planner_travel.api.Repository.MedicoRepository;
+import planner_travel.api.Repository.Medico.MedicoRepository;
 
 import java.util.List;
 
