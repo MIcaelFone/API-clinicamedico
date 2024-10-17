@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import planner_travel.api.DTO.medico.DadosAtualizarMedico;
 import planner_travel.api.DTO.medico.DadosCadastrarMedico;
 import planner_travel.api.Enum.Especialidade;
-import planner_travel.api.models.enderenco.Enderenco;
+import planner_travel.api.models.enderenco.EnderencoModel;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
@@ -28,7 +28,8 @@ public class MedicoModel {
     private Especialidade especialidade;
 
     @Embedded
-    private Enderenco endereco;
+    private EnderencoModel endereco;
+
 
     public MedicoModel(DadosCadastrarMedico dados) {
         this.nome= dados.nome();
@@ -46,7 +47,7 @@ public class MedicoModel {
             this.cpf=dados.telefone();
         }
         else if(dados.endereco()!=null){
-            this.endereco= new Enderenco(dados.endereco());
+            this.endereco= new EnderencoModel(dados.endereco());
         }
         else if(dados.especialidade()!=null){
             this.especialidade=dados.especialidade();
