@@ -11,7 +11,7 @@ import planner_travel.api.DTO.Enderenco.DadosEndereco;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Enderenco {
+public class EnderencoModel {
     @Column(name = "logradouro")
     private String logradouro;
     @Column(name = "cidade")
@@ -22,7 +22,7 @@ public class Enderenco {
     private String pais;
 
 
-    public Enderenco(@Valid  DadosEndereco dados){
+    public EnderencoModel(@Valid  DadosEndereco dados){
           this.logradouro=dados.logradouro();
           this.cidade= dados.cidade();
           this.uf=dados.uf();
