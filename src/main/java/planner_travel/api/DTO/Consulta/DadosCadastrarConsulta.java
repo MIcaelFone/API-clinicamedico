@@ -12,17 +12,18 @@ import java.util.Timer;
 
 public record DadosCadastrarConsulta(
         @NotNull
-        Long id_pacienteModel,
+        Long id_paciente,
 
-        Long id_medicoModel,
+        Long id_medico,
         @NotNull
         LocalDate data_consulta,
         @NotNull
-        LocalTime hora_consulta
+        LocalTime hora_consulta_inicio
+
         ) {
 
     public DadosCadastrarConsulta(ConsultaModel consultaModel){
-        this(consultaModel.getPacienteModel(),consultaModel.getIdMedico(),consultaModel.getData_consulta(),consultaModel.getHora_consulta());
+        this(consultaModel.getPacienteModel(),consultaModel.getIdMedico(),consultaModel.getDataConsulta(),consultaModel.getHoraConsultaInicio());
     }
 }
 
