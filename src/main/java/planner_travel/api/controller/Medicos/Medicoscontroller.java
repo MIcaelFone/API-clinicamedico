@@ -20,25 +20,25 @@ public class Medicoscontroller {
     private MedicosService service;
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Cadastrar medico",description ="Descrição de medico")
+    @Operation(summary = "Cadastrar médico", description = "Registrar um novo médico no sistema. É necessário fornecer informações como nome, telefone, endereço e especialidade.")
     public void cadastrar(@RequestBody @Valid DadosCadastrarMedico dados){
        service.cadastrar(dados);
     }
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Listar medicos",description ="Lista todos médicos")
+    @Operation(summary = "Listar médicos", description = "Obter uma lista com todos os médicos registrados no sistema.")
     public List<DadosCadastrarMedico> listar() {
         return service.listar();
     }
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Atualiza medicos",description ="Apenas nome,telefone,enderenco e especialidade são atualizados")
+    @Operation(summary = "Atualizar informações do médico", description = "Atualizar os dados de um médico existente no sistema. Apenas nome, telefone, endereço e especialidade podem ser alterados.")
     public void atualizar(@RequestBody @Valid DadosAtualizarMedico dados, @PathVariable long id){
         service.atualizar(dados,id);
     }
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Deletar paciente" ,description = "Através do Id, paciente é removido")
+    @Operation(summary = "Deletar médico", description = "Remover um médico do sistema com base no ID fornecido.")
     public void deletar(@PathVariable Long id){
         service.deletar(id);
     }
