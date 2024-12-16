@@ -1,57 +1,58 @@
 package planner_travel.api.models.medicos;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.*;
 import planner_travel.api.DTO.medico.DadosAtualizarMedico;
 import planner_travel.api.DTO.medico.DadosCadastrarMedico;
 import planner_travel.api.Enum.Especialidade;
 import planner_travel.api.models.enderenco.EnderencoModel;
 
+@Entity
 @Table(name = "medicos")
-@Entity(name = "Medico")
-@Getter
-@NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of="id")
+@Data
 public class MedicoModel {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "nome")
     private String nome;
-    private String cpf;
-    private String crm;
-
+    @Column(name = "cpf")
+    public String cpf;
+    @Column(name = "crm")
+    public String crm;
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
-
     @Embedded
-    private EnderencoModel endereco;
+    private EnderencoModel enderenco;
 
+    // Construtor padrão (necessário para o Hibernate)
+    public MedicoModel() {
+    }
 
     public MedicoModel(DadosCadastrarMedico dados) {
-        this.nome= dados.nome();
-        this.crm=dados.crm();
-        this.cpf=dados.cpf();
-        this.endereco=dados.enderenco();
-        this.especialidade=dados.especialidade();
+        this.nome = dados.nome();
+        this.crm = dados.crm();
+        this.cpf = dados.cpf();
+        this.enderenco = dados.enderenco();
+        this.especialidade = dados.especialidade();
     }
 
     public void atualizar(DadosAtualizarMedico dados) {
-        if(dados.nome()!=null){
-            this.nome=dados.nome();
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
         }
-        else if(dados.telefone()!=null){
-            this.cpf=dados.telefone();
+        if (dados.endereco() != null) {
+            this.enderenco = new EnderencoModel(dados.endereco());
         }
-        else if(dados.endereco()!=null){
-            this.endereco= new EnderencoModel(dados.endereco());
-        }
-        else if(dados.especialidade()!=null){
-            this.especialidade=dados.especialidade();
+        if (dados.especialidade() != null) {
+            this.especialidade = dados.especialidade();
         }
     }
-
 }
+
+
