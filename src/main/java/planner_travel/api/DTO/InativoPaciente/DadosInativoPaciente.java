@@ -8,6 +8,6 @@ public record DadosInativoPaciente(
         Long id_Paciente
 ) {
     public DadosInativoPaciente(InativoPacienteModel model){
-        this(model.getPacienteModel().getId());
+        this(model.pacienteModel);
     }
 }
