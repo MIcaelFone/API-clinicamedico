@@ -8,6 +8,6 @@ public record DadosCadastrarMedicoInativo(
         Long id_medico
 ) {
     public DadosCadastrarMedicoInativo(InativoMedicoModel model){
-        this(model.getMedicoModel().getId());
+        this(model.getId());
     }
 }
