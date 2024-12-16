@@ -44,9 +44,7 @@ public class PacienteModel {
 
     public void atualizar(DadosAtualizarPaciente dados) {
         nome=dados.nome();
-        email=dados.email();
         telefone=dados.telefone();
-        CPF=dados.CPF();
         enderenco=new EnderencoModel(dados.endereco());
     }
 }
