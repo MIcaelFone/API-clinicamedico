@@ -7,9 +7,7 @@ public record DadosEndereco(
         String logradouro,
         @NotBlank
         String cidade,
-
         String uf,
-
         String pais
 ) {
 
