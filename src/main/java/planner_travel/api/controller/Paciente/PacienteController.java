@@ -21,28 +21,26 @@ public class PacienteController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Listar paciente" ,description = "Lista todos pacientes")
+    @Operation(summary = "Listar pacientes", description = "Obter uma lista com todas as informações dos pacientes cadastrados no sistema.")
     public List<DadosCadastrarPaciente> listarpaciente (){
-         return service.Listar();
+        return service.Listar();
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Cadastrar paciente" ,description = "Todos os dados são valor string,lembrando uf só aceita 3 valores ")
+    @Operation(summary = "Cadastrar paciente", description = "Registrar um novo paciente no sistema. Requer informações como nome, telefone, endereço e especialidade.")
     public void CadastrarPaciente(@RequestBody @Valid DadosCadastrarPaciente dados){
         service.cadastrar(dados);
     }
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Atualizar paciente" ,description = "Nome,telefone,enderenco,especialidade são os únicos dados atualizados ")
+    @Operation(summary = "Atualizar paciente", description = "Atualizar informações de um paciente existente. Apenas nome, telefone, endereço e especialidade podem ser modificados.")
     public void AtualizarPaciente(@RequestBody @Valid  DadosAtualizarPaciente dados, @PathVariable long id){
         service.atualizar(dados,id);
     }
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Deletar paciente" ,description = "Através do Id, paciente é removido")
+    @Operation(summary = "Deletar consulta", description = "Remover uma consulta existente. Necessário preencher o motivo do cancelamento, ID da consulta e ID do médico.")
     public void DeletarPaciente(@PathVariable long id){
         service.Deletar(id);
     }
-
-
 }
