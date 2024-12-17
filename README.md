@@ -72,7 +72,9 @@ O sistema fornecerá as seguintes funcionalidades (em desenvolvimento):
 - **Pacientes**: Cadastro, atualização, listagem e remoção de pacientes.
 - **Médicos**: Cadastro, atualização, listagem e remoção de médicos.
 - **Agendamentos**: Criação e gerenciamento de agendamentos de consultas.
-- **Consultas**: Registro e visualização de consultas realizadas.
+- **Consultas**: Registro ,cancelamento e visualização de consultas realizadas.
+- **Medicos inativos**:Listar,cadastramento da inatividade.
+- **Paciente inativos**:Listar,cadastramento da inatividade.
 
 ## Endpoints
 
