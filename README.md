@@ -19,14 +19,15 @@ Para rodar este projeto localmente, você precisará do seguinte:
 
 - **Java 17** ou superior
 - **Maven** (para gerenciamento de dependências)
-- **PostgreSQL** ou outro banco de dados relacional (pode ser configurado no `application.properties`)
+- **MySQL** ou outro banco de dados relacional (pode ser configurado no `application.properties`)
+- **** ou outro banco de dados relacional (pode ser configurado no `application.properties`)
 
 ### Passos
 
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/seu-usuario/nome-do-repositorio.git
+    git clone https://github.com/MIcaelFone/API-clinicamedico.git
     ```
 
 2. Navegue até o diretório do projeto:
