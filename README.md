@@ -82,11 +82,11 @@ A seguir, uma lista dos endpoints planejados para o projeto (sujeitos a mudança
 
 ### Pacientes
 
-- **GET** `/api/pacientes` - Retorna a lista de todos os pacientes.
-- **GET** `/api/pacientes/{id}` - Retorna detalhes de um paciente específico.
-- **POST** `/api/pacientes` - Cria um novo paciente.
-- **PUT** `/api/pacientes/{id}` - Atualiza as informações de um paciente.
-- **DELETE** `/api/pacientes/{id}` - Remove um paciente do sistema.
+- **GET** `/api/paciente` - Retorna a lista de todos os pacientes.
+- **GET** `/api/paciente/{id}` - Retorna detalhes de um paciente específico.
+- **POST** `/api/paciente` - Cria um novo paciente.
+- **PUT** `/api/paciente/{id}` - Atualiza as informações de um paciente.
+- **DELETE** `/api/paciente/{id}` - Remove um paciente do sistema.
 
 ### Médicos
 
