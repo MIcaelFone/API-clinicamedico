@@ -33,7 +33,7 @@ Para rodar este projeto localmente, você precisará do seguinte:
 2. Navegue até o diretório do projeto:
 
     ```bash
-    cd nome-do-repositorio
+    cd API-clinicamedico
     ```
 
 3. Compile o projeto e baixe as dependências:
@@ -42,13 +42,12 @@ Para rodar este projeto localmente, você precisará do seguinte:
     mvn clean install
     ```
 
-4. Configure o arquivo `application.properties` com as credenciais do banco de dados:
+4. Configure o arquivo `application.properties` com as credenciais do  banco de dados:
 
     ```properties
-    spring.datasource.url=jdbc:postgresql://localhost:5432/clinica_medica
-    spring.datasource.username=seu_usuario
-    spring.datasource.password=sua_senha
-    spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.url=${DB_URL}
+    spring.datasource.username=${DB_USERNAME}
+    spring.datasource.password=${DB_USERNAME}   
     ```
 
 5. Execute a aplicação:
@@ -62,9 +61,8 @@ Para rodar este projeto localmente, você precisará do seguinte:
 ## Tecnologias Utilizadas
 
 - **Java 17**
-- **Spring Boot**
 - **Spring Data JPA**
-- **PostgreSQL** (ou outro banco de dados relacional)
+- **MySQL**  
 - **Maven** (para o build do projeto)
 
 ## Funcionalidades
