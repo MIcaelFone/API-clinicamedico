@@ -1,7 +1,7 @@
 package planner_travel.api.Repository.Consullta;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import planner_travel.api.DTO.Consulta.MostrarHorariosConsultasDTO;
+
 import planner_travel.api.models.Consulta.ConsultaModel;
 import planner_travel.api.models.paciente.PacienteModel;
 
