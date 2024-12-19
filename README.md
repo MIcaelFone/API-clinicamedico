@@ -47,7 +47,8 @@ Para rodar este projeto localmente, você precisará do seguinte:
     ```properties
     spring.datasource.url=${DB_URL}
     spring.datasource.username=${DB_USERNAME}
-    spring.datasource.password=${DB_USERNAME}   
+    spring.datasource.password=${DB_USERNAME}
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
     ```
 
 5. Execute a aplicação:
