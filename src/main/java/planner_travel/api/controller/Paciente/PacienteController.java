@@ -39,7 +39,7 @@ public class PacienteController {
     }
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Deletar consulta", description = "Remover uma consulta existente. Necessário preencher o motivo do cancelamento, ID da consulta e ID do médico.")
+    @Operation(summary = "Deletar paciente", description = "Remove um paciente existente pelo ID.")
     public void DeletarPaciente(@PathVariable long id){
         service.Deletar(id);
     }
