@@ -74,8 +74,8 @@ O sistema fornecerá as seguintes funcionalidades (em desenvolvimento):
 - **Médicos**: Cadastro, atualização, listagem e remoção de médicos.
 - **Agendamentos**: Criação e gerenciamento de agendamentos de consultas.
 - **Consultas**: Registro ,cancelamento e visualização de consultas realizadas.
-- **Medicos inativos**:Listar,cadastramento da inatividade.
-- **Paciente inativos**:Listar,cadastramento da inatividade.
+- **Medicos inativos**:Listar,cadastramento da inatividade de médicos.
+- **Paciente inativos**:Listar,cadastramento da inatividade de pacientes.
 
 ## Endpoints
 
@@ -83,31 +83,37 @@ A seguir, uma lista dos endpoints planejados para o projeto (sujeitos a mudança
 
 ### Pacientes
 
-- **GET** `/api/paciente` - Retorna a lista de todos os pacientes.
-- **GET** `/api/paciente/{id}` - Retorna detalhes de um paciente específico.
-- **POST** `/api/paciente` - Cria um novo paciente.
-- **PUT** `/api/paciente/{id}` - Atualiza as informações de um paciente.
-- **DELETE** `/api/paciente/{id}` - Remove um paciente do sistema.
+- **GET** `/paciente` - Retorna a lista de todos os pacientes.
+- **POST** `/paciente` - Cria um novo paciente.
+- **PUT** `/paciente/{id}` - Atualiza as informações de um paciente.
+- **DELETE** `/paciente/{id}` - Remove um paciente do sistema.
 
 ### Médicos
 
-- **GET** `/api/medicos` - Retorna a lista de todos os médicos.
-- **GET** `/api/medicos/{id}` - Retorna detalhes de um médico específico.
-- **POST** `/api/medicos` - Cria um novo médico.
-- **PUT** `/api/medicos/{id}` - Atualiza as informações de um médico.
-- **DELETE** `/api/medicos/{id}` - Remove um médico do sistema.
-
-### Agendamentos
-
-- **GET** `/api/agendamentos` - Retorna a lista de todos os agendamentos.
-- **POST** `/api/agendamentos` - Cria um novo agendamento.
+- **GET** `/medicos` - Retorna a lista de todos os médicos.
+- **POST** `/medicos` - Cria um novo médico.
+- **PUT** `/medicos/{id}` - Atualiza as informações de um médico.
+- **DELETE** `/medicos/{id}` - Remove um médico do sistema.
 
 ### Consultas
 
-- **GET** `/api/consultas` - Retorna a lista de todas as consultas.
-- **POST** `/api/consultas` - Registra uma nova consulta.
+- **GET** `/consulta` - Retorna a lista de todas as consultas.
+- **POST** `/consulta` - Registra uma nova consulta.
+- **DELETE** `/consulta/{id}` - Deleta uma consulta.
 
-> **Nota:** Endpoints adicionais podem ser incluídos conforme o desenvolvimento da API avança.
+ ### MedicoInativo
+
+ - **GET** `/inativomedico` - Retorna a lista de todos os médicos inativos.
+- **POST** `/inativomedico` - Registra inatividade do médico.
+- **DELETE** `/inativomedico` - Deleta uma inatividade do médico.
+
+ ### PacienteInativo
+
+ - **GET** `/inativopaciente` - Retorna a lista de todos os pacientes inativos.
+- **POST** `/inativopaciente` - Registra inatividade de paciente.
+- **DELETE** `/inativopaciente` - Deleta uma inatividade do paciente.
+
+ **Nota:** Endpoints adicionais podem ser incluídos conforme o desenvolvimento da API avança.
 
 ## Contribuindo
 
