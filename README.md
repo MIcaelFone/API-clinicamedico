@@ -8,6 +8,7 @@ Esta é a API de uma clínica médica desenvolvida com **Spring Boot**. O objeti
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Funcionalidades](#funcionalidades)
 - [Endpoints](#endpoints)
+- [Swagger](#swagger)
 - [Contribuindo](#contribuindo)
 - [Licença](#licença)
 
@@ -20,7 +21,6 @@ Para rodar este projeto localmente, você precisará do seguinte:
 - **Java 17** ou superior
 - **Maven** (para gerenciamento de dependências)
 - **MySQL** ou outro banco de dados relacional (pode ser configurado no `application.properties`)
-- **** ou outro banco de dados relacional (pode ser configurado no `application.properties`)
 
 ### Passos
 
@@ -56,6 +56,7 @@ Para rodar este projeto localmente, você precisará do seguinte:
     ```bash
     mvn spring-boot:run
     ```
+   
 
 6. A API estará disponível em `http://localhost:8080`.
 
@@ -114,6 +115,19 @@ A seguir, uma lista dos endpoints planejados para o projeto (sujeitos a mudança
 - **DELETE** `/inativopaciente` - Deleta uma inatividade do paciente.
 
  **Nota:** Endpoints adicionais podem ser incluídos conforme o desenvolvimento da API avança.
+
+## Swagger
+
+Esta API utiliza o Swagger para fornecer uma interface interativa e intuitiva para explorar e testar os endpoints. O Swagger facilita o entendimento das funcionalidades da API e permite que desenvolvedores integrem e consumam os serviços de forma mais eficiente.
+
+### Recursos Disponíveis no Swagger
+Visualização dos Endpoints: Explore os endpoints disponíveis, métodos HTTP suportados, e suas descrições.
+Testes Interativos: Execute chamadas diretamente na interface para verificar o funcionamento dos endpoints.
+Detalhamento de Modelos: Consulte os modelos de entrada e saída de dados para cada endpoint, incluindo validações e exemplos.
+
+```bash
+http://localhost:8080/swagger-ui.html
+```
 
 ## Contribuindo
 
