@@ -7,7 +7,7 @@ Esta é a API de uma clínica médica desenvolvida com **Spring Boot**. O objeti
 - [Instalação](#instalação)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Funcionalidades](#funcionalidades)
-- [Regras de negócio](#Regras_de_negócio)
+- [Regras de negócio](#Regras de negócio)
 - [Endpoints](#endpoints)
 - [Swagger](#swagger)
 - [Contribuindo](#contribuindo)
@@ -129,7 +129,7 @@ Detalhamento de Modelos: Consulte os modelos de entrada e saída de dados para c
 ```bash
 http://localhost:8080/swagger-ui.html
 ```
-## Regras_de_negócio
+## Regras de negócio
 
 O sistema de agendamento de consultas segue as regras abaixo para garantir o funcionamento adequado da clínica e evitar conflitos:
 
