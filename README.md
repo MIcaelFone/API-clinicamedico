@@ -101,13 +101,13 @@ A seguir, uma lista dos endpoints planejados para o projeto (sujeitos a mudança
 - **POST** `/consulta` - Registra uma nova consulta.
 - **DELETE** `/consulta/{id}` - Deleta uma consulta.
 
- ### MedicoInativo
+ ### Medico Inativos
 
  - **GET** `/inativomedico` - Retorna a lista de todos os médicos inativos.
 - **POST** `/inativomedico` - Registra inatividade do médico.
 - **DELETE** `/inativomedico` - Deleta uma inatividade do médico.
 
- ### PacienteInativo
+ ### Paciente Inativos
 
  - **GET** `/inativopaciente` - Retorna a lista de todos os pacientes inativos.
 - **POST** `/inativopaciente` - Registra inatividade de paciente.
