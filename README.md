@@ -7,6 +7,7 @@ Esta é a API de uma clínica médica desenvolvida com **Spring Boot**. O objeti
 - [Instalação](#instalação)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Funcionalidades](#funcionalidades)
+- [Regras de negócio](#Regras_de_negócio)
 - [Endpoints](#endpoints)
 - [Swagger](#swagger)
 - [Contribuindo](#contribuindo)
@@ -66,7 +67,7 @@ Para rodar este projeto localmente, você precisará do seguinte:
 - **Spring Data JPA**
 - **MySQL**  
 - **Maven** (para o build do projeto)
-
+## Regras
 ## Funcionalidades
 
 O sistema fornecerá as seguintes funcionalidades (em desenvolvimento):
@@ -128,6 +129,30 @@ Detalhamento de Modelos: Consulte os modelos de entrada e saída de dados para c
 ```bash
 http://localhost:8080/swagger-ui.html
 ```
+## Regras_de_negócio
+
+O sistema de agendamento de consultas segue as regras abaixo para garantir o funcionamento adequado da clínica e evitar conflitos:
+
+### Informações Necessárias para o Agendamento
+
+- **Paciente:** Seleção de um paciente ativo cadastrado no sistema.
+- **Médico:** Seleção de um médico ativo cadastrado no sistema.
+- **Data/Hora da Consulta:** Definição de uma data e horário válidos.
+
+### Regras de Funcionamento da Clínica
+
+- O horário de funcionamento é de **segunda a sábado, das 07:00 às 19:00**.
+- As consultas possuem uma duração fixa de **1 hora**.
+
+### Validações no Agendamento
+
+- As consultas devem ser agendadas com uma **antecedência mínima de 30 minutos**.
+- **Pacientes inativos** não podem ter consultas agendadas.
+- **Médicos inativos** não podem ter consultas agendadas.
+- Um mesmo paciente não pode ter **mais de uma consulta no mesmo dia**.
+- Um médico não pode ter mais de **uma consulta marcada para o mesmo horário**.
+
+Essas regras asseguram a organização, eficiência e disponibilidade nos agendamentos realizados pela clínica.
 
 ## Contribuindo
 
