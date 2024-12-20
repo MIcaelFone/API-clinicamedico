@@ -33,7 +33,7 @@ Para rodar este projeto localmente, você precisará do seguinte:
 2. Navegue até o diretório do projeto:
 
     ```bash
-    cd nome-do-repositorio
+    cd API-clinicamedico
     ```
 
 3. Compile o projeto e baixe as dependências:
@@ -42,13 +42,13 @@ Para rodar este projeto localmente, você precisará do seguinte:
     mvn clean install
     ```
 
-4. Configure o arquivo `application.properties` com as credenciais do banco de dados:
+4. Configure o arquivo `application.properties` com as credenciais do  banco de dados:
 
     ```properties
-    spring.datasource.url=jdbc:postgresql://localhost:5432/clinica_medica
-    spring.datasource.username=seu_usuario
-    spring.datasource.password=sua_senha
-    spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.url=${DB_URL}
+    spring.datasource.username=${DB_USERNAME}
+    spring.datasource.password=${DB_USERNAME}
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
     ```
 
 5. Execute a aplicação:
@@ -62,9 +62,8 @@ Para rodar este projeto localmente, você precisará do seguinte:
 ## Tecnologias Utilizadas
 
 - **Java 17**
-- **Spring Boot**
 - **Spring Data JPA**
-- **PostgreSQL** (ou outro banco de dados relacional)
+- **MySQL**  
 - **Maven** (para o build do projeto)
 
 ## Funcionalidades
@@ -74,7 +73,9 @@ O sistema fornecerá as seguintes funcionalidades (em desenvolvimento):
 - **Pacientes**: Cadastro, atualização, listagem e remoção de pacientes.
 - **Médicos**: Cadastro, atualização, listagem e remoção de médicos.
 - **Agendamentos**: Criação e gerenciamento de agendamentos de consultas.
-- **Consultas**: Registro e visualização de consultas realizadas.
+- **Consultas**: Registro ,cancelamento e visualização de consultas realizadas.
+- **Medicos inativos**:Listar,cadastramento da inatividade de médicos.
+- **Paciente inativos**:Listar,cadastramento da inatividade de pacientes.
 
 ## Endpoints
 
@@ -82,31 +83,37 @@ A seguir, uma lista dos endpoints planejados para o projeto (sujeitos a mudança
 
 ### Pacientes
 
-- **GET** `/api/pacientes` - Retorna a lista de todos os pacientes.
-- **GET** `/api/pacientes/{id}` - Retorna detalhes de um paciente específico.
-- **POST** `/api/pacientes` - Cria um novo paciente.
-- **PUT** `/api/pacientes/{id}` - Atualiza as informações de um paciente.
-- **DELETE** `/api/pacientes/{id}` - Remove um paciente do sistema.
+- **GET** `/paciente` - Retorna a lista de todos os pacientes.
+- **POST** `/paciente` - Cria um novo paciente.
+- **PUT** `/paciente/{id}` - Atualiza as informações de um paciente.
+- **DELETE** `/paciente/{id}` - Remove um paciente do sistema.
 
 ### Médicos
 
-- **GET** `/api/medicos` - Retorna a lista de todos os médicos.
-- **GET** `/api/medicos/{id}` - Retorna detalhes de um médico específico.
-- **POST** `/api/medicos` - Cria um novo médico.
-- **PUT** `/api/medicos/{id}` - Atualiza as informações de um médico.
-- **DELETE** `/api/medicos/{id}` - Remove um médico do sistema.
-
-### Agendamentos
-
-- **GET** `/api/agendamentos` - Retorna a lista de todos os agendamentos.
-- **POST** `/api/agendamentos` - Cria um novo agendamento.
+- **GET** `/medicos` - Retorna a lista de todos os médicos.
+- **POST** `/medicos` - Cria um novo médico.
+- **PUT** `/medicos/{id}` - Atualiza as informações de um médico.
+- **DELETE** `/medicos/{id}` - Remove um médico do sistema.
 
 ### Consultas
 
-- **GET** `/api/consultas` - Retorna a lista de todas as consultas.
-- **POST** `/api/consultas` - Registra uma nova consulta.
+- **GET** `/consulta` - Retorna a lista de todas as consultas.
+- **POST** `/consulta` - Registra uma nova consulta.
+- **DELETE** `/consulta/{id}` - Deleta uma consulta.
 
-> **Nota:** Endpoints adicionais podem ser incluídos conforme o desenvolvimento da API avança.
+ ### Medico Inativos
+
+ - **GET** `/inativomedico` - Retorna a lista de todos os médicos inativos.
+- **POST** `/inativomedico` - Registra inatividade do médico.
+- **DELETE** `/inativomedico` - Deleta uma inatividade do médico.
+
+ ### Paciente Inativos
+
+ - **GET** `/inativopaciente` - Retorna a lista de todos os pacientes inativos.
+- **POST** `/inativopaciente` - Registra inatividade de paciente.
+- **DELETE** `/inativopaciente` - Deleta uma inatividade do paciente.
+
+ **Nota:** Endpoints adicionais podem ser incluídos conforme o desenvolvimento da API avança.
 
 ## Contribuindo
 
