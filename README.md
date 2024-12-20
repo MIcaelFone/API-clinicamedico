@@ -120,6 +120,12 @@ A seguir, uma lista dos endpoints planejados para o projeto (sujeitos a mudança
 ## Swagger
 
 Esta API utiliza o Swagger para fornecer uma interface interativa e intuitiva para explorar e testar os endpoints. O Swagger facilita o entendimento das funcionalidades da API e permite que desenvolvedores integrem e consumam os serviços de forma mais eficiente.
+
+### Recursos Disponíveis no Swagger
+Visualização dos Endpoints: Explore os endpoints disponíveis, métodos HTTP suportados, e suas descrições.
+Testes Interativos: Execute chamadas diretamente na interface para verificar o funcionamento dos endpoints.
+Detalhamento de Modelos: Consulte os modelos de entrada e saída de dados para cada endpoint, incluindo validações e exemplos.
+
 ```bash
 http://localhost:8080/swagger-ui.html
 ```
