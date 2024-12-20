@@ -26,11 +26,10 @@ public class Consultacontroller {
     public ConsultaService service;
 
     @PostMapping
-    @Operation(summary = "Cadastrar Consulta" ,description = "Inserir uma nova consulta no sistema. Necessário fornecer os dados do paciente, médico, data e hora da consulta")
+    @Operation(summary = "Cadastrar Consulta" ,description = "Cadastra uma nova consulta no sistema. É necessário fornecer os dados do paciente, médico, data e hora da consulta. A hora deve estar no formato HH:mm:ss.")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<String> cadastrarConsulta(@Valid @RequestBody DadosCadastrarConsulta dados){
          boolean success=service.cadastrarConsulta(dados);
-
          if(success){
              return ResponseEntity.status(HttpStatus.CREATED).body("Consulta marcada com sucesso");
          }
@@ -51,7 +50,7 @@ public class Consultacontroller {
         }
     }
     @GetMapping
-    @Operation(summary = "Listar consultas" ,description = "Retornar uma lista de todas as consultas registradas no sistema")
+    @Operation(summary = "Listar consultas" ,description  = "Retornar uma lista de todas as consultas registradas no sistema")
     public List<ConsultaModel> retornarConsulta(){
       List<ConsultaModel> dados=service.listar();
       if(dados.isEmpty()){
