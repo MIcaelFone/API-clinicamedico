@@ -67,7 +67,7 @@ Para rodar este projeto localmente, você precisará do seguinte:
 - **Spring Data JPA**
 - **MySQL**  
 - **Maven** (para o build do projeto)
-## Regras
+
 ## Funcionalidades
 
 O sistema fornecerá as seguintes funcionalidades (em desenvolvimento):
