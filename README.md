@@ -164,7 +164,4 @@ Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
 4. Envie para a branch principal (`git push origin feature/nome-da-feature`).
 5. Abra um Pull Request.
 
-## Licença
-
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais informações.
 
